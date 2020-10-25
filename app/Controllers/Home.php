@@ -12,9 +12,9 @@ class Home extends BaseController {
       'products'  =>  $model->findAll(),
     ];
 
-    // if( empty( $data['products'] ) ) {
-    //   throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find products. Please create some items before.');
-    // }
+    if( empty( $data['products'] ) ) {
+      throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find products. Please create some items before.');
+    }
 
     echo view('templates/header', $data);
     echo view('products/products', $data);
