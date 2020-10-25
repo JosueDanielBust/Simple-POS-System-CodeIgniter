@@ -29,7 +29,6 @@ class Products extends Controller {
         'product_image' =>  $this->request->getPost('product_image'),
         'product_value' =>  $this->request->getPost('product_value'),
       ]);
-      //echo view('products/success');
       return redirect()->to('/');
     } else {
       $data['title']  = 'Create New Product';
